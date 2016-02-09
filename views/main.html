@@ -1,0 +1,31 @@
+<div>
+
+    <table class="bootstrap-table table table-striped table-hover table-responsive"
+           data-toggle="table"
+           data-pagination="true"
+           data-search="true">
+        <tr>
+            <th>Date</th>
+            <th>Country</th>
+            <th>Location</th>
+            <th>Total Deaths</th>
+            <th>Total Injuries</th>
+            <th>Deaths: Civilians</th>
+            <th>Deaths: Children</th>
+            <th>Lat</th>
+            <th>Lon</th>
+        </tr>
+        <tr ng-repeat="strike in droneData">
+            <td>{{strike.date | date: 'MMMM d, y'}}</td>
+            <td>{{strike.country}}</td>
+            <td>{{strike.location}}</td>
+            <td>{{strike.deaths}}</td>
+            <td>{{strike.injuries}}</td>
+            <td>{{strike.civilians}}</td>
+            <td>{{strike.children}}</td>
+            <td>{{strike.lat}}</td>
+            <td>{{strike.lon}}</td>
+        </tr>
+    </table>
+</div>
+
