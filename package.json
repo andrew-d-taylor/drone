@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "./node_modules/http-server/bin/http-server"
+
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
     "angular-route": "^1.5.0",
     "angular-simple-logger": "^0.1.7",
     "bootstrap": "^3.3.6",
+    "http-server": "^0.8.5",
     "lodash": "^4.5.0"
   }
 }
