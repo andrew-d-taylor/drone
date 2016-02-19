@@ -5,13 +5,13 @@
     <title>Drones</title>
 
     <!--Angular Libs -->
-    <script src="bin/angular/angular.js"></script>
-    <script src="bin/angular/angular-route.js"></script>
-    <script src="bin/angular/angular-resource.js"></script>
-    <script src="bin/jquery/jquery-2.1.3.min.js"></script>
+    <script src="/node_modules/angular/angular.js"></script>
+    <script src="/node_modules/angular-route/angular-route.js"></script>
+    <script src="/node_modules/angular-resource/angular-resource.js"></script>
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
 
     <!--Bootstrap -->
-    <script src="bin/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <!--App -->
     <script src="app.js"></script>
@@ -19,10 +19,31 @@
     <script src="services.js"></script>
 
     <!--CSS -->
-    <link rel="stylesheet" href="bin/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="drones.css">
+
+    <!-- angular-google-maps and dependencies-->
+    <script src="serverApiKey.js"></script>
+    <script src="/node_modules/angular-google-maps/dist/angular-google-maps.js"></script>
+    <script src="node_modules/lodash/lodash.js"></script>
+    <script src="node_modules/angular-simple-logger/dist/angular-simple-logger.js"></script>
 
 </head>
 <body>
+<nav class="navbar navbar-default" id="dronestrike-navbar">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Drone Strike Mapper</a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="http://search.dronestre.am">Dronestre.am</a> </li>
+                <li><a href="https://github.com/andrew-d-taylor/drone">Github</a></li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
 
 <div ng-view autoscroll="true"> </div>
 
