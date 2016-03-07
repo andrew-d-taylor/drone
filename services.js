@@ -1,18 +1,16 @@
+
 (function () {
     'use strict';
-
-    /* Services */
 
     var services = angular.module('services', ['ngResource']);
 
     services.factory('DroneAPIService',[ '$resource', function ($resource) {
-        return $resource('data/strikes.json', {}, {
+        return $resource('/api/drones', {}, {
             findAll : {
                 method: 'GET',
                 isArray : false
             }
         });
     }]);
-
 
 }());
