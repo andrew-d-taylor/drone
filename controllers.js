@@ -5,6 +5,13 @@
 
     controllers.controller('MainCtrl', ['$scope', 'DroneAPIService', 'uiGmapGoogleMapApi', function($scope, DroneAPIService, uiGmapGoogleMapApi) {
 
+        $scope.orderByField = 'date';
+        $scope.reverseSort = false;
+
+        $scope.setOrder = function(value) {
+            $scope.orderByValue = value;
+        };
+
         $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
 
         DroneAPIService.findAll({}, function(data) {

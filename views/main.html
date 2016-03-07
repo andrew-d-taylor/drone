@@ -16,17 +16,53 @@
                        data-pagination="true"
                        data-search="true">
                     <tr>
-                        <th>Date</th>
-                        <th>Country</th>
-                        <th>Location</th>
-                        <th>Total Deaths</th>
-                        <th>Total Injuries</th>
-                        <th>Deaths: Civilians</th>
-                        <th>Deaths: Children</th>
-                        <th>Lat</th>
-                        <th>Lon</th>
+                        <th>
+                            <a href="#/" ng-click="orderByField='date'; reverseSort = !reverseSort">
+                                Date<span ng-show="orderByField == 'date'"><span ng-show="!reverseSort"> ^</span><span ng-show="reverseSort"> v</span></span>
+                            </a>
+                        </th>
+                        <th>
+                            <a href="#/" ng-click="orderByField='country'; reverseSort = !reverseSort">
+                                Country<span ng-show="orderByField == 'country'"><span ng-show="!reverseSort"> ^</span><span ng-show="reverseSort"> v</span></span>
+                            </a>
+                        </th>
+                        <th>
+                            <a href="#/" ng-click="orderByField='location'; reverseSort = !reverseSort">
+                                Location<span ng-show="orderByField == 'location'"><span ng-show="!reverseSort"> ^</span><span ng-show="reverseSort"> v</span></span>
+                            </a>
+                        </th>
+                        <th>
+                            <a href="#/" ng-click="orderByField='deaths'; reverseSort = !reverseSort">
+                                Deaths<span ng-show="orderByField == 'deaths'"><span ng-show="!reverseSort"> ^</span><span ng-show="reverseSort"> v</span></span>
+                            </a>
+                        </th>
+                        <th>
+                            <a href="#/" ng-click="orderByField='injuries'; reverseSort = !reverseSort">
+                                Injuries<span ng-show="orderByField == 'injuries'"><span ng-show="!reverseSort"> ^</span><span ng-show="reverseSort"> v</span></span>
+                            </a>
+                        </th>
+                        <th>
+                            <a href="#/" ng-click="orderByField='civilians'; reverseSort = !reverseSort">
+                                Civilians killed<span ng-show="orderByField == 'civilians'"><span ng-show="!reverseSort"> ^</span><span ng-show="reverseSort"> v</span></span>
+                            </a>
+                        </th>
+                        <th>
+                            <a href="#/" ng-click="orderByField='children'; reverseSort = !reverseSort">
+                                Children killed<span ng-show="orderByField == 'children'"><span ng-show="!reverseSort"> ^</span><span ng-show="reverseSort"> v</span></span>
+                            </a>
+                        </th>
+                        <th>
+                            <a href="#/" ng-click="orderByField='lat'; reverseSort = !reverseSort">
+                                Lat<span ng-show="orderByField == 'lat'"><span ng-show="!reverseSort"> ^</span><span ng-show="reverseSort"> v</span></span>
+                            </a>
+                        </th>
+                        <th>
+                            <a href="#/" ng-click="orderByField='lon'; reverseSort = !reverseSort">
+                                Lon<span ng-show="orderByField == 'lon'"><span ng-show="!reverseSort"> ^</span><span ng-show="reverseSort"> v</span></span>
+                            </a>
+                        </th>
                     </tr>
-                    <tr ng-repeat="strike in droneData | filter:searchParam" ng-click="onStrikeClick(strike)">
+                    <tr ng-repeat="strike in droneData | filter:searchParam | orderBy:orderByField:reverseSort" ng-click="onStrikeClick(strike)">
                         <td>{{strike.date | date: 'MMMM d, y'}}</td>
                         <td>{{strike.country}}</td>
                         <td>{{strike.location}}</td>
