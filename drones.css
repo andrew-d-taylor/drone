@@ -1,4 +1,7 @@
-.angular-google-map-container { height: 400px; }
+.angular-google-map-container {
+    height: 400px;
+    margin: 5px;
+}
 
 #drone-main-container {
     margin-left: 20px;
