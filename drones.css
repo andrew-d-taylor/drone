@@ -1,1 +1,13 @@
 .angular-google-map-container { height: 400px; }
+
+#drone-main-container {
+    margin-left: 20px;
+}
+
+#drone-strike-table {
+    width: 97%;
+    margin:0 auto;}
+
+#drone-pagination-controls {
+    margin: 5px;
+}

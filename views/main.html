@@ -11,9 +11,8 @@
                         <input type="text" class="form-control" placeholder="Country, location..." ng-model="searchParam">
                     </div>
                 </div>
-                <table class="bootstrap-table table table-striped table-hover table-responsive"
+                <table id="drone-strike-table" class="bootstrap-table table table-striped table-hover table-responsive"
                        data-toggle="table"
-                       data-pagination="true"
                        data-search="true">
                     <tr>
                         <th>
@@ -62,7 +61,7 @@
                             </a>
                         </th>
                     </tr>
-                    <tr ng-repeat="strike in droneData | filter:searchParam | orderBy:orderByField:reverseSort" ng-click="onStrikeClick(strike)">
+                    <tr dir-paginate="strike in droneData | filter:searchParam | orderBy:orderByField:reverseSort | itemsPerPage:12" ng-click="onStrikeClick(strike)">
                         <td>{{strike.date | date: 'MMMM d, y'}}</td>
                         <td>{{strike.country}}</td>
                         <td>{{strike.location}}</td>
@@ -73,6 +72,13 @@
                         <td>{{strike.lat}}</td>
                         <td>{{strike.lon}}</td>
                     </tr>
+                    <dir-pagination-controls
+                            id="drone-pagination-controls"
+                            max-size="5"
+                            auto-hide="false"
+                            direction-links="true"
+                            boundary-links="true" >
+                    </dir-pagination-controls>
                 </table>
             </div>
         </div>

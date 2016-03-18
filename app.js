@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    var app = angular.module('app', ['uiGmapgoogle-maps','ngRoute', 'controllers','services']);
+    var app = angular.module('app', ['uiGmapgoogle-maps','ngRoute', 'controllers','services', 'angularUtils.directives.dirPagination']);
 
     app.config(function ($routeProvider, $httpProvider, $sceDelegateProvider) {
 
